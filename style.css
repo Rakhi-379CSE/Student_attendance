@@ -1,0 +1,1168 @@
+/* =========================================================
+   ATTENDANCEPRO - COMPLETE STYLE.CSS
+========================================================= */
+
+/* =========================
+   1. RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --purple: #7c3aed;
+    --green: #16a34a;
+    --orange: #ea580c;
+    --red: #dc2626;
+    --teal: #0f766e;
+
+    --bg: #f5f7fb;
+    --white: #ffffff;
+
+    --text: #172033;
+    --text-light: #64748b;
+    --border: #e5e7eb;
+
+    --sidebar-width: 260px;
+    --radius: 14px;
+
+    --shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================
+   2. BODY
+========================= */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   3. SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    background: linear-gradient(
+        180deg,
+        #111827 0%,
+        #172554 100%
+    );
+
+    color: white;
+
+    padding: 22px 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   4. LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 4px 10px 25px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 13px;
+
+    background: linear-gradient(
+        135deg,
+        #3b82f6,
+        #7c3aed
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+.logo h2 {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.logo span {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================
+   5. SIDEBAR MENU
+========================= */
+
+.sidebar-menu {
+    margin-top: 22px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.menu-title {
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    margin: 20px 10px 8px;
+}
+
+.nav-link {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 13px;
+
+    margin-bottom: 5px;
+
+    border-radius: 10px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    transition: 0.25s ease;
+}
+
+.nav-link span {
+    width: 25px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    transform: translateX(3px);
+}
+
+.nav-link.active {
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+    );
+
+    color: white;
+
+    box-shadow:
+        0 8px 18px
+        rgba(37, 99, 235, 0.28);
+}
+
+
+/* =========================
+   6. SIDEBAR FOOTER
+========================= */
+
+.sidebar-footer {
+    border-top:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 18px 10px 5px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidebar-footer strong {
+    font-size: 13px;
+    color: #e2e8f0;
+}
+
+.sidebar-footer small {
+    color: #64748b;
+    font-size: 10px;
+}
+
+
+/* =========================
+   7. MAIN CONTENT
+========================= */
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+
+    padding: 28px 34px;
+}
+
+
+/* =========================
+   8. TOP HEADER
+========================= */
+
+.top-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+.top-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.top-header p {
+    color: var(--text-light);
+
+    margin-top: 4px;
+
+    font-size: 14px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.date-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    color: #475569;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================
+   9. DASHBOARD CARDS
+========================= */
+
+.dashboard-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+}
+
+.dashboard-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow: var(--shadow);
+
+    transition: 0.25s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 30px
+        rgba(15, 23, 42, 0.10);
+}
+
+.card-icon {
+    width: 54px;
+    height: 54px;
+
+    min-width: 54px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.card-icon.blue {
+    background: #dbeafe;
+}
+
+.card-icon.purple {
+    background: #ede9fe;
+}
+
+.card-icon.green {
+    background: #dcfce7;
+}
+
+.card-icon.orange {
+    background: #ffedd5;
+}
+
+.card-icon.teal {
+    background: #ccfbf1;
+}
+
+.card-icon.red {
+    background: #fee2e2;
+}
+
+.card-info p {
+    color: var(--text-light);
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.card-info h2 {
+    font-size: 25px;
+    color: #111827;
+}
+
+.card-description {
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+
+/* =========================
+   10. DASHBOARD GRID
+========================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.dashboard-section {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 22px;
+
+    box-shadow: var(--shadow);
+
+    min-width: 0;
+}
+
+.dashboard-section.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================
+   11. SECTION HEADER
+========================= */
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.section-header h2 {
+    font-size: 17px;
+    color: #111827;
+}
+
+.section-header p {
+    color: var(--text-light);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+
+/* =========================
+   12. MANAGEMENT TOOLBAR
+========================= */
+
+.department-toolbar,
+.course-toolbar,
+.subject-toolbar,
+.student-toolbar,
+.management-toolbar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   13. BUTTONS
+========================= */
+
+.btn {
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+.add-btn,
+#addDepartmentBtn,
+#addCourseBtn,
+#addSubjectBtn,
+#addStudentBtn {
+    background: var(--primary);
+
+    color: white;
+
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.add-btn:hover,
+#addDepartmentBtn:hover,
+#addCourseBtn:hover,
+#addSubjectBtn:hover,
+#addStudentBtn:hover {
+    background: var(--primary-dark);
+}
+
+
+/* =========================
+   14. SEARCH BOX
+========================= */
+
+.search-box {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 450px;
+}
+
+.search-icon {
+    position: absolute;
+
+    left: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+}
+
+.search-box input,
+.search-input {
+    width: 100%;
+
+    min-height: 42px;
+
+    padding: 10px 14px 10px 42px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: white;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+.search-box input:focus,
+.search-input:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================
+   15. TABLE
+========================= */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 550px;
+}
+
+thead {
+    background: #f8fafc;
+}
+
+th {
+    color: #64748b;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    padding: 12px;
+
+    text-align: left;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+td {
+    padding: 13px 12px;
+
+    font-size: 12px;
+
+    color: #475569;
+
+    border-bottom:
+        1px solid #f1f5f9;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+.empty-message {
+    text-align: center;
+
+    color: #94a3b8;
+
+    padding: 28px !important;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   16. MODAL
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    padding: 20px;
+
+    background:
+        rgba(15, 23, 42, 0.55);
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.modal.show,
+.modal.active,
+.modal.open {
+    display: flex;
+}
+
+
+/* =========================
+   17. MODAL CONTENT
+========================= */
+
+.modal-content {
+    width: 100%;
+
+    max-width: 620px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 26px;
+
+    box-shadow:
+        0 24px 60px
+        rgba(15, 23, 42, 0.28);
+}
+
+.modal-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+.modal-header h2,
+.modal-header h3 {
+    color: #111827;
+    font-size: 21px;
+}
+
+.modal-header p {
+    margin-top: 5px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+.modal-close,
+.close-modal,
+.close-btn {
+    width: 36px;
+    height: 36px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.close-modal:hover,
+.close-btn:hover {
+    background: #fee2e2;
+    color: var(--red);
+}
+
+
+/* =========================
+   18. FORM
+========================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.form-control {
+    width: 100%;
+
+    min-height: 43px;
+
+    padding: 10px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: white;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.form-control:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.1);
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================
+   19. FORM BUTTONS
+========================= */
+
+.modal-actions,
+.form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+
+/* =========================
+   20. ACTION BUTTONS
+========================= */
+
+.action-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn,
+.action-btn {
+    border: none;
+
+    min-width: 34px;
+
+    height: 34px;
+
+    padding: 0 9px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.view-btn {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.edit-btn {
+    background: #fef3c7;
+    color: #a16207;
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* =========================
+   21. STUDENT DETAILS
+========================= */
+
+.student-name-cell {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.student-avatar {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #dbeafe;
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.student-name-cell small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--text-light);
+}
+
+.code-badge {
+    display: inline-flex;
+
+    padding: 5px 9px;
+
+    border-radius: 7px;
+
+    background: #ede9fe;
+
+    color: #6d28d9;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   22. BADGES
+========================= */
+
+.badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 4px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.badge-present {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.badge-absent {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.badge-warning {
+    background: #fef3c7;
+    color: #a16207;
+}
+
+
+/* =========================
+   23. RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .main-content {
+        padding: 24px;
+    }
+}
+
+
+/* =========================
+   24. MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --sidebar-width: 0px;
+    }
+
+    .sidebar {
+        width: 260px;
+
+        transform:
+            translateX(-100%);
+
+        transition:
+            transform 0.3s ease;
+    }
+
+    .sidebar.open {
+        transform:
+            translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+
+        padding: 20px 15px;
+    }
+
+    .top-header {
+        align-items: flex-start;
+    }
+
+    .top-header h1 {
+        font-size: 22px;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .department-toolbar,
+    .course-toolbar,
+    .subject-toolbar,
+    .student-toolbar,
+    .management-toolbar {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .search-box {
+        max-width: 100%;
+    }
+
+    .add-btn,
+    #addDepartmentBtn,
+    #addCourseBtn,
+    #addSubjectBtn,
+    #addStudentBtn {
+        width: 100%;
+    }
+
+    .modal {
+        padding: 12px;
+    }
+
+    .modal-content {
+        padding: 20px;
+
+        max-height: 94vh;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   25. SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .main-content {
+        padding: 16px 10px;
+    }
+
+    .dashboard-card {
+        padding: 16px;
+    }
+
+    .dashboard-section {
+        padding: 16px;
+    }
+
+    .card-icon {
+        width: 46px;
+        height: 46px;
+
+        min-width: 46px;
+
+        font-size: 21px;
+    }
+
+    .card-info h2 {
+        font-size: 21px;
+    }
+
+    .modal-content {
+        padding: 16px;
+    }
+
+    .modal-actions,
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .modal-actions .btn,
+    .form-actions .btn {
+        width: 100%;
+    }
+}
+
+
+/* =========================
+   END
+========================= */
