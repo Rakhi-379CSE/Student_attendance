@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>AttendancePro | Departments</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         SIDEBAR
+    =================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h2>
+                    AttendancePro
+                </h2>
+
+                <span>
+                    Management System
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-menu">
+
+
+            <p class="menu-title">
+                MAIN MENU
+            </p>
+
+
+            <a href="index.html"
+                class="nav-link">
+
+                <span>🏠</span>
+
+                Dashboard
+
+            </a>
+
+
+
+            <p class="menu-title">
+                ACADEMIC
+            </p>
+
+
+            <a href="departments.html"
+                class="nav-link active">
+
+                <span>🏢</span>
+
+                Departments
+
+            </a>
+
+
+            <a href="courses.html"
+                class="nav-link">
+
+                <span>🎓</span>
+
+                Courses
+
+            </a>
+
+
+            <a href="subjects.html"
+                class="nav-link">
+
+                <span>📚</span>
+
+                Subjects
+
+            </a>
+
+
+
+            <p class="menu-title">
+                MANAGEMENT
+            </p>
+
+
+            <a href="students.html"
+                class="nav-link">
+
+                <span>👨‍🎓</span>
+
+                Students
+
+            </a>
+
+
+            <a href="attendance.html"
+                class="nav-link">
+
+                <span>📅</span>
+
+                Attendance
+
+            </a>
+
+
+            <a href="reports.html"
+                class="nav-link">
+
+                <span>📊</span>
+
+                Reports
+
+            </a>
+
+
+
+            <p class="menu-title">
+                SYSTEM
+            </p>
+
+
+            <a href="settings.html"
+                class="nav-link">
+
+                <span>⚙️</span>
+
+                Settings
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- SIDEBAR FOOTER -->
+
+        <div class="sidebar-footer">
+
+            <strong>
+                AttendancePro
+            </strong>
+
+            <small>
+                Student Management System
+            </small>
+
+            <small>
+                Version 1.0
+            </small>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ==================================================
+         MAIN CONTENT
+    =================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+
+            <div>
+
+                <h1>
+                    Departments
+                </h1>
+
+                <p>
+                    Manage academic departments and their structure.
+                </p>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="date-box">
+
+                    📅
+
+                    <span id="currentDate">
+                        Loading...
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- ==================================================
+             STATISTICS
+        =================================================== -->
+
+        <section class="dashboard-cards">
+
+
+            <!-- DEPARTMENTS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon purple">
+                    🏢
+                </div>
+
+                <div class="card-info">
+
+                    <p>
+                        Total Departments
+                    </p>
+
+                    <h2 id="departmentCount">
+                        0
+                    </h2>
+
+                    <span class="card-description">
+                        Academic departments
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COURSES -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon blue">
+                    🎓
+                </div>
+
+                <div class="card-info">
+
+                    <p>
+                        Total Courses
+                    </p>
+
+                    <h2 id="departmentCourseCount">
+                        0
+                    </h2>
+
+                    <span class="card-description">
+                        Across all departments
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STUDENTS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon green">
+                    👨‍🎓
+                </div>
+
+                <div class="card-info">
+
+                    <p>
+                        Total Students
+                    </p>
+
+                    <h2 id="departmentStudentCount">
+                        0
+                    </h2>
+
+                    <span class="card-description">
+                        Registered students
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             DEPARTMENT MANAGEMENT
+        =================================================== -->
+
+        <section class="dashboard-section">
+
+
+            <!-- SECTION HEADER -->
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        Department Management
+                    </h2>
+
+                    <p>
+                        Create, update and manage academic departments.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="btn btn-primary"
+                    onclick="openDepartmentModal()">
+
+                    + Add Department
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- SEARCH -->
+
+            <div class="department-toolbar">
+
+
+                <div class="search-box">
+
+                    <span class="search-icon">
+                        🔍
+                    </span>
+
+                    <input
+                        type="text"
+                        id="departmentSearch"
+                        placeholder="Search by department name, code or description..."
+                        oninput="searchDepartments()">
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- TABLE -->
+
+            <div class="table-container">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                #
+                            </th>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                Code
+                            </th>
+
+                            <th>
+                                Courses
+                            </th>
+
+                            <th>
+                                Students
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="departmentTable">
+
+
+                        <tr>
+
+                            <td
+                                colspan="6"
+                                class="empty-message">
+
+                                🏢 No departments added yet.
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             ACADEMIC STRUCTURE
+        =================================================== -->
+
+        <section class="dashboard-section">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        💡 Academic Structure
+                    </h2>
+
+                    <p>
+                        Understand how your academic system is organized.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="academic-structure">
+
+
+                <!-- DEPARTMENT -->
+
+                <div class="structure-card">
+
+                    <div class="structure-icon purple">
+                        🏢
+                    </div>
+
+                    <h3>
+                        Department
+                    </h3>
+
+                    <p>
+                        The highest academic division.
+                    </p>
+
+                    <span>
+                        Example: Computer Science & Engineering
+                    </span>
+
+                </div>
+
+
+
+                <div class="structure-arrow">
+                    →
+                </div>
+
+
+
+                <!-- COURSE -->
+
+                <div class="structure-card">
+
+                    <div class="structure-icon blue">
+                        🎓
+                    </div>
+
+                    <h3>
+                        Course
+                    </h3>
+
+                    <p>
+                        A degree or academic program.
+                    </p>
+
+                    <span>
+                        Example: B.Tech Computer Science
+                    </span>
+
+                </div>
+
+
+
+                <div class="structure-arrow">
+                    →
+                </div>
+
+
+
+                <!-- SUBJECT -->
+
+                <div class="structure-card">
+
+                    <div class="structure-icon orange">
+                        📚
+                    </div>
+
+                    <h3>
+                        Subject
+                    </h3>
+
+                    <p>
+                        A specific academic topic.
+                    </p>
+
+                    <span>
+                        Example: Java Programming
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         ADD / EDIT DEPARTMENT MODAL
+    =================================================== -->
+
+    <div
+        class="modal"
+        id="departmentModal">
+
+
+        <div class="modal-content">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+
+                <div>
+
+                    <h2 id="departmentModalTitle">
+                        Add Department
+                    </h2>
+
+                    <p>
+                        Enter department information below.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    onclick="closeDepartmentModal()">
+
+                    ✕
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form
+                id="departmentForm"
+                onsubmit="saveDepartment(event)">
+
+
+                <!-- HIDDEN EDIT ID -->
+
+                <input
+                    type="hidden"
+                    id="editDepartmentId">
+
+
+
+                <!-- DEPARTMENT NAME -->
+
+                <div class="form-group">
+
+                    <label for="departmentName">
+
+                        Department Name *
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="departmentName"
+                        placeholder="Example: Computer Science & Engineering"
+                        required>
+
+                </div>
+
+
+
+                <!-- DEPARTMENT CODE -->
+
+                <div class="form-group">
+
+                    <label for="departmentCode">
+
+                        Department Code *
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="departmentCode"
+                        placeholder="Example: CSE"
+                        maxlength="10"
+                        required>
+
+                </div>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="departmentDescription">
+
+                        Description
+
+                    </label>
+
+
+                    <textarea
+                        id="departmentDescription"
+                        rows="4"
+                        placeholder="Enter a short description about this department..."></textarea>
+
+                </div>
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="modal-actions">
+
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        onclick="closeDepartmentModal()">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        Save Department
+
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <script src="department.js"></script>
+
+
+</body>
+
+</html>

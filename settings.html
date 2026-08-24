@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>AttendancePro | Settings</title>
+
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         SIDEBAR
+    =================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h2>
+                    AttendancePro
+                </h2>
+
+                <span>
+                    Management System
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-menu">
+
+
+            <p class="menu-title">
+                MAIN MENU
+            </p>
+
+
+            <a href="index.html"
+                class="nav-link">
+
+                <span>🏠</span>
+
+                Dashboard
+
+            </a>
+
+
+
+            <p class="menu-title">
+                ACADEMIC
+            </p>
+
+
+            <a href="departments.html"
+                class="nav-link">
+
+                <span>🏢</span>
+
+                Departments
+
+            </a>
+
+
+            <a href="courses.html"
+                class="nav-link">
+
+                <span>🎓</span>
+
+                Courses
+
+            </a>
+
+
+            <a href="subjects.html"
+                class="nav-link">
+
+                <span>📚</span>
+
+                Subjects
+
+            </a>
+
+
+
+            <p class="menu-title">
+                MANAGEMENT
+            </p>
+
+
+            <a href="students.html"
+                class="nav-link">
+
+                <span>👨‍🎓</span>
+
+                Students
+
+            </a>
+
+
+            <a href="attendance.html"
+                class="nav-link">
+
+                <span>📅</span>
+
+                Attendance
+
+            </a>
+
+
+            <a href="reports.html"
+                class="nav-link">
+
+                <span>📊</span>
+
+                Reports
+
+            </a>
+
+
+
+            <p class="menu-title">
+                SYSTEM
+            </p>
+
+
+            <a href="settings.html"
+                class="nav-link active">
+
+                <span>⚙️</span>
+
+                Settings
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- SIDEBAR FOOTER -->
+
+        <div class="sidebar-footer">
+
+            <strong>
+                AttendancePro
+            </strong>
+
+            <small>
+                Student Management System
+            </small>
+
+            <small>
+                Version 1.0
+            </small>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ==================================================
+         MAIN CONTENT
+    =================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ==================================================
+             HEADER
+        =================================================== -->
+
+        <header class="top-header">
+
+
+            <div>
+
+                <h1>
+                    Settings
+                </h1>
+
+                <p>
+                    Configure your AttendancePro system.
+                </p>
+
+            </div>
+
+
+
+            <div class="header-right">
+
+                <div class="date-box">
+
+                    📅
+
+                    <span id="currentDate">
+                        Loading...
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- ==================================================
+             SYSTEM SETTINGS
+        =================================================== -->
+
+        <section class="dashboard-section">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        ⚙️ System Settings
+                    </h2>
+
+                    <p>
+                        Customize basic system information.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div
+                style="
+                display:grid;
+                grid-template-columns:
+                1fr 1fr;
+                gap:20px;
+                ">
+
+
+                <!-- SYSTEM NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        System Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="systemName"
+                        value="AttendancePro">
+
+                </div>
+
+
+
+                <!-- INSTITUTION -->
+
+                <div class="form-group">
+
+                    <label>
+                        Institution Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="institutionName"
+                        placeholder="Enter institution name">
+
+                </div>
+
+
+
+                <!-- ADMIN NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        Administrator Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="adminName"
+                        placeholder="Enter administrator name">
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label>
+                        Administrator Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="adminEmail"
+                        placeholder="admin@example.com">
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div
+                style="
+                display:flex;
+                justify-content:flex-end;
+                margin-top:20px;
+                ">
+
+
+                <button
+                    class="btn btn-primary"
+                    onclick="saveSystemSettings()">
+
+                    💾 Save Settings
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             ATTENDANCE SETTINGS
+        =================================================== -->
+
+        <section
+            class="dashboard-section"
+            style="margin-top:20px;">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        📅 Attendance Settings
+                    </h2>
+
+                    <p>
+                        Configure attendance rules.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div
+                style="
+                display:grid;
+                grid-template-columns:
+                1fr 1fr;
+                gap:20px;
+                ">
+
+
+                <!-- MINIMUM PERCENTAGE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Minimum Attendance Percentage
+                    </label>
+
+                    <input
+                        type="number"
+                        id="minimumAttendance"
+                        min="0"
+                        max="100"
+                        value="75">
+
+                    <small>
+                        Students below this percentage will be marked as low attendance.
+                    </small>
+
+                </div>
+
+
+
+                <!-- WARNING PERCENTAGE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Warning Attendance Percentage
+                    </label>
+
+                    <input
+                        type="number"
+                        id="warningAttendancePercentage"
+                        min="0"
+                        max="100"
+                        value="60">
+
+                    <small>
+                        Students between warning and minimum will receive a warning.
+                    </small>
+
+                </div>
+
+
+
+                <!-- AUTO DATE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Attendance Date
+                    </label>
+
+
+                    <select
+                        id="attendanceDateMode">
+
+
+                        <option value="today">
+                            Automatically use today's date
+                        </option>
+
+
+                        <option value="manual">
+                            Allow manual date selection
+                        </option>
+
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- CONFIRMATION -->
+
+                <div class="form-group">
+
+                    <label>
+                        Attendance Confirmation
+                    </label>
+
+
+                    <select
+                        id="attendanceConfirmation">
+
+
+                        <option value="yes">
+                            Ask before saving attendance
+                        </option>
+
+
+                        <option value="no">
+                            Save directly
+                        </option>
+
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div
+                style="
+                display:flex;
+                justify-content:flex-end;
+                margin-top:20px;
+                ">
+
+
+                <button
+                    class="btn btn-primary"
+                    onclick="saveAttendanceSettings()">
+
+                    💾 Save Attendance Settings
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             APPEARANCE
+        =================================================== -->
+
+        <section
+            class="dashboard-section"
+            style="margin-top:20px;">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        🎨 Appearance
+                    </h2>
+
+                    <p>
+                        Customize the appearance of the application.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div
+                style="
+                display:grid;
+                grid-template-columns:
+                1fr 1fr;
+                gap:20px;
+                ">
+
+
+                <!-- THEME -->
+
+                <div class="form-group">
+
+                    <label>
+                        Theme
+                    </label>
+
+
+                    <select
+                        id="themePreference"
+                        onchange="changeTheme()">
+
+
+                        <option value="light">
+                            ☀️ Light
+                        </option>
+
+
+                        <option value="dark">
+                            🌙 Dark
+                        </option>
+
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- TABLE ROWS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Table Display
+                    </label>
+
+
+                    <select
+                        id="tableDensity">
+
+
+                        <option value="comfortable">
+                            Comfortable
+                        </option>
+
+
+                        <option value="compact">
+                            Compact
+                        </option>
+
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             DATA MANAGEMENT
+        =================================================== -->
+
+        <section
+            class="dashboard-section danger-section"
+            style="margin-top:20px;">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        🗄️ Data Management
+                    </h2>
+
+                    <p>
+                        Manage application data stored in this browser.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div
+                style="
+                display:grid;
+                grid-template-columns:
+                repeat(3,1fr);
+                gap:15px;
+                ">
+
+
+                <!-- EXPORT -->
+
+                <div class="settings-action-card">
+
+                    <div class="settings-action-icon">
+                        📥
+                    </div>
+
+
+                    <h3>
+                        Export Data
+                    </h3>
+
+
+                    <p>
+                        Download your students, courses, subjects and attendance data.
+                    </p>
+
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="exportAllData()">
+
+                        Export
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- IMPORT -->
+
+                <div class="settings-action-card">
+
+                    <div class="settings-action-icon">
+                        📤
+                    </div>
+
+
+                    <h3>
+                        Import Data
+                    </h3>
+
+
+                    <p>
+                        Restore previously exported AttendancePro data.
+                    </p>
+
+
+                    <button
+                        class="btn btn-secondary"
+                        onclick="document.getElementById('importFile').click()">
+
+                        Import
+
+                    </button>
+
+
+                    <input
+                        type="file"
+                        id="importFile"
+                        accept=".json"
+                        style="display:none"
+                        onchange="importAllData(event)">
+
+                </div>
+
+
+
+                <!-- RESET -->
+
+                <div class="settings-action-card danger-card">
+
+                    <div class="settings-action-icon">
+                        ⚠️
+                    </div>
+
+
+                    <h3>
+                        Reset Data
+                    </h3>
+
+
+                    <p>
+                        Permanently remove all application data.
+                    </p>
+
+
+                    <button
+                        class="btn btn-danger"
+                        onclick="resetApplicationData()">
+
+                        Reset Everything
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             DATABASE STATUS
+        =================================================== -->
+
+        <section
+            class="dashboard-section"
+            style="margin-top:20px;">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        💾 Local Database Status
+                    </h2>
+
+                    <p>
+                        Current data stored in this browser.
+                    </p>
+
+                </div>
+
+
+                <span
+                    class="status-badge present">
+
+                    ● Local Storage Active
+
+                </span>
+
+
+            </div>
+
+
+
+            <div
+                style="
+                display:grid;
+                grid-template-columns:
+                repeat(4,1fr);
+                gap:15px;
+                ">
+
+
+                <div class="stat-box">
+
+                    <span>
+                        Departments
+                    </span>
+
+                    <strong id="settingsDepartments">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <span>
+                        Courses
+                    </span>
+
+                    <strong id="settingsCourses">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <span>
+                        Students
+                    </span>
+
+                    <strong id="settingsStudents">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <span>
+                        Attendance
+                    </span>
+
+                    <strong id="settingsAttendance">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             ABOUT SYSTEM
+        =================================================== -->
+
+        <section
+            class="dashboard-section"
+            style="margin-top:20px;">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        ℹ️ About AttendancePro
+                    </h2>
+
+                    <p>
+                        Information about this project.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div
+                style="
+                display:grid;
+                grid-template-columns:
+                1fr 1fr;
+                gap:20px;
+                ">
+
+
+                <div>
+
+                    <h3>
+                        AttendancePro
+                    </h3>
+
+
+                    <p
+                        style="
+                        margin-top:10px;
+                        color:#64748b;
+                        line-height:1.7;
+                        ">
+
+                        AttendancePro is a professional
+                        student attendance management
+                        system designed to organize
+                        departments, courses, semesters,
+                        subjects, students and attendance
+                        records in one place.
+
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="info-row">
+
+                        <span>
+                            Version
+                        </span>
+
+                        <strong>
+                            1.0.0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>
+                            Frontend
+                        </span>
+
+                        <strong>
+                            HTML / CSS / JavaScript
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>
+                            Storage
+                        </span>
+
+                        <strong>
+                            Browser LocalStorage
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong>
+                            Active
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

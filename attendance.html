@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>AttendancePro | Attendance</title>
+
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         SIDEBAR
+    =================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h2>
+                    AttendancePro
+                </h2>
+
+                <span>
+                    Management System
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-menu">
+
+
+            <p class="menu-title">
+                MAIN MENU
+            </p>
+
+
+            <a href="index.html"
+                class="nav-link">
+
+                <span>🏠</span>
+                Dashboard
+
+            </a>
+
+
+
+            <p class="menu-title">
+                ACADEMIC
+            </p>
+
+
+            <a href="departments.html"
+                class="nav-link">
+
+                <span>🏢</span>
+                Departments
+
+            </a>
+
+
+            <a href="courses.html"
+                class="nav-link">
+
+                <span>🎓</span>
+                Courses
+
+            </a>
+
+
+            <a href="subjects.html"
+                class="nav-link">
+
+                <span>📚</span>
+                Subjects
+
+            </a>
+
+
+
+            <p class="menu-title">
+                MANAGEMENT
+            </p>
+
+
+            <a href="students.html"
+                class="nav-link">
+
+                <span>👨‍🎓</span>
+                Students
+
+            </a>
+
+
+            <a href="attendance.html"
+                class="nav-link active">
+
+                <span>📅</span>
+                Attendance
+
+            </a>
+
+
+            <a href="reports.html"
+                class="nav-link">
+
+                <span>📊</span>
+                Reports
+
+            </a>
+
+
+
+            <p class="menu-title">
+                SYSTEM
+            </p>
+
+
+            <a href="settings.html"
+                class="nav-link">
+
+                <span>⚙️</span>
+                Settings
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- SIDEBAR FOOTER -->
+
+        <div class="sidebar-footer">
+
+            <strong>
+                AttendancePro
+            </strong>
+
+            <small>
+                Student Management System
+            </small>
+
+            <small>
+                Version 1.0
+            </small>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ==================================================
+         MAIN CONTENT
+    =================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ==================================================
+             HEADER
+        =================================================== -->
+
+        <header class="top-header">
+
+
+            <div>
+
+                <h1>
+                    Attendance Management
+                </h1>
+
+                <p>
+                    Mark and manage student attendance.
+                </p>
+
+            </div>
+
+
+
+            <div class="header-right">
+
+                <div class="date-box">
+
+                    📅
+
+                    <span id="currentDate">
+                        Loading...
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- ==================================================
+             ATTENDANCE STATISTICS
+        =================================================== -->
+
+        <section class="dashboard-cards">
+
+
+            <!-- TOTAL -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon blue">
+                    📚
+                </div>
+
+                <div class="card-info">
+
+                    <p>
+                        Total Classes
+                    </p>
+
+                    <h2 id="attendanceTotalClasses">
+                        0
+                    </h2>
+
+                    <span class="card-description">
+                        Attendance records
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRESENT -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon green">
+                    ✓
+                </div>
+
+                <div class="card-info">
+
+                    <p>
+                        Present
+                    </p>
+
+                    <h2 id="attendancePresent">
+                        0
+                    </h2>
+
+                    <span class="card-description">
+                        Present records
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ABSENT -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon red">
+                    ✕
+                </div>
+
+                <div class="card-info">
+
+                    <p>
+                        Absent
+                    </p>
+
+                    <h2 id="attendanceAbsent">
+                        0
+                    </h2>
+
+                    <span class="card-description">
+                        Absent records
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AVERAGE -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon purple">
+                    %
+                </div>
+
+                <div class="card-info">
+
+                    <p>
+                        Average Attendance
+                    </p>
+
+                    <h2 id="overallAttendance">
+                        0%
+                    </h2>
+
+                    <span class="card-description">
+                        Overall percentage
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             MARK ATTENDANCE
+        =================================================== -->
+
+        <section class="dashboard-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        📅 Mark Attendance
+                    </h2>
+
+                    <p>
+                        Select academic information before
+                        marking attendance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ATTENDANCE FORM -->
+
+            <div class="attendance-form">
+
+
+                <!-- DATE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Attendance Date *
+                    </label>
+
+                    <input
+                        type="date"
+                        id="attendanceDate"
+                        required>
+
+                </div>
+
+
+
+                <!-- DEPARTMENT -->
+
+                <div class="form-group">
+
+                    <label>
+                        Department *
+                    </label>
+
+                    <select
+                        id="attendanceDepartment"
+                        onchange="updateAttendanceCourses()">
+
+                        <option value="">
+                            Select Department
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- COURSE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Course *
+                    </label>
+
+                    <select
+                        id="attendanceCourse"
+                        onchange="updateAttendanceSemesters()">
+
+                        <option value="">
+                            Select Course
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- SEMESTER -->
+
+                <div class="form-group">
+
+                    <label>
+                        Semester *
+                    </label>
+
+                    <select
+                        id="attendanceSemester"
+                        onchange="updateAttendanceSubjects()">
+
+                        <option value="">
+                            Select Semester
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+
+                    <label>
+                        Subject *
+                    </label>
+
+                    <select
+                        id="attendanceSubject"
+                        onchange="loadAttendanceStudents()">
+
+                        <option value="">
+                            Select Subject
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             STUDENT ATTENDANCE
+        =================================================== -->
+
+        <section
+            class="dashboard-section"
+            id="attendanceStudentSection">
+
+
+            <!-- HEADER -->
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        👨‍🎓 Student Attendance
+                    </h2>
+
+                    <p>
+                        Mark attendance for selected students.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="attendanceStudentCount">
+                        0 Students
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SEARCH -->
+
+            <div
+                style="
+                max-width:450px;
+                margin-bottom:20px;
+                ">
+
+                <div class="search-box">
+
+                    <span class="search-icon">
+                        🔍
+                    </span>
+
+                    <input
+                        type="text"
+                        id="attendanceStudentSearch"
+                        placeholder="Search student..."
+                        oninput="searchAttendanceStudents()">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TABLE -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+
+                            <th>
+                                Roll No.
+                            </th>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Present
+                            </th>
+
+                            <th>
+                                Absent
+                            </th>
+
+                            <th>
+                                Attendance %
+                            </th>
+
+                            <th>
+                                Mark
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="attendanceStudentTable">
+
+                        <tr>
+
+                            <td
+                                colspan="7"
+                                class="empty-message">
+
+                                Select Department, Course,
+                                Semester and Subject first.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+
+            <!-- SAVE -->
+
+            <div
+                style="
+                display:flex;
+                justify-content:flex-end;
+                margin-top:20px;
+                ">
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="saveAllAttendance()">
+
+                    💾 Save Attendance
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             ATTENDANCE HISTORY
+        =================================================== -->
+
+        <section
+            class="dashboard-section"
+            style="margin-top:20px;">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        📋 Attendance History
+                    </h2>
+
+                    <p>
+                        Search and manage previous attendance
+                        records.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FILTERS -->
+
+            <div
+                style="
+                display:grid;
+                grid-template-columns:
+                2fr 1fr 1fr;
+                gap:12px;
+                margin-bottom:20px;
+                ">
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <span class="search-icon">
+                        🔍
+                    </span>
+
+                    <input
+                        type="text"
+                        id="attendanceHistorySearch"
+                        placeholder="Search student or subject..."
+                        oninput="searchAttendanceHistory()">
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <select
+                    id="attendanceStatusFilter"
+                    onchange="filterAttendanceHistory()">
+
+                    <option value="">
+                        All Status
+                    </option>
+
+                    <option value="Present">
+                        Present
+                    </option>
+
+                    <option value="Absent">
+                        Absent
+                    </option>
+
+                </select>
+
+
+
+                <!-- DATE -->
+
+                <input
+                    type="date"
+                    id="attendanceHistoryDate"
+                    onchange="filterAttendanceHistory()">
+
+            </div>
+
+
+
+            <!-- HISTORY TABLE -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Roll No.
+                            </th>
+
+                            <th>
+                                Course
+                            </th>
+
+                            <th>
+                                Semester
+                            </th>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="attendanceHistoryTable">
+
+                        <tr>
+
+                            <td
+                                colspan="8"
+                                class="empty-message">
+
+                                No attendance records found.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         ATTENDANCE DETAILS MODAL
+    =================================================== -->
+
+    <div
+        class="modal"
+        id="attendanceDetailsModal">
+
+        <div class="modal-content">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        📋 Attendance Details
+                    </h2>
+
+                    <p>
+                        Attendance record information.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="closeAttendanceDetails()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+
+
+            <div id="attendanceDetailsContent">
+
+                <!-- JavaScript will generate details -->
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <script src="attendance.js"></script>
+
+
+</body>
+
+</html>
